@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script defer src="/_vercel/insights/script.js"></script>
+    
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/@exampledev/new.css@1.1.2/new.min.css"
@@ -13,9 +13,42 @@
       name="description"
       content="It's going to jump!"
     />
+    <style>
+      #for-real {
+        color: rgb(22, 22, 83);
+      }
+    </style>
   </head>
-  <body>
-    <div>I am going to jump!</div>
-    <div>For reals!!</div>
+  <body>    
+    <div id="jump">I am going to jump!</div>
+    <div id="for-real">For reals!!</div>
+    <script>
+      
+      const logColour = (message) => {
+        console.log(message);
+      };
+      
+      const doThis = () => {
+        changeJumpDivColour("blue");
+        setTimeout(doThis, 5000);
+      };  
+      
+      setTimeout(doThis, 5000);
+
+      // 1 //naked number
+      // "this is a naked string"  //naked string      
+      // () => {};  //naked function
+
+      const changeJumpDivColour = (color) => {
+        const jumpDiv = document.getElementById("jump");
+        jumpDiv.innerHTML = "No I am not";
+        jumpDiv.style.color = color;
+        jumpDiv.style.position = "fixed";
+        jumpDiv.style.top = "100px";
+        jumpDiv.style.left = "100px";
+      };      
+      logColour("Hey Rowan!!!");
+      changeJumpDivColour("pink");
+    </script>
   </body>
 </html>
