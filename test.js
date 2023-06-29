@@ -18,14 +18,8 @@ function setRandomColor() {
     return document.getElementById(targetDiv).clientWidth;    
   }
 
-  function randomPosition(top, left) {
+  const randomTop = (top) => {return Math.floor(Math.random() * (top + 1));}
+  const randomLeft = (left) => {return Math.floor(Math.random() * (left + 1));}
 
-  }
-
-  console.log(setRandomColor());
-  console.log(setRandomColor());
-  console.log(setRandomColor());
-  console.log(setRandomColor());
-  console.log(setRandomColor());
-  console.log(setRandomColor());
-  console.log(setRandomColor());
+  console.log("Left : ", randomLeft(100));
+  console.log("Top : ", randomTop(25));

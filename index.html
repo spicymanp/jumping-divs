@@ -31,7 +31,7 @@
       } 
       return color;
 
-      }      
+      };      
 
       const logColour = (message) => {
         console.log(message);
@@ -42,27 +42,31 @@
         setTimeout(doThis, 3000);
       };
 
-      const getMaxHeight = (targetDiv) => {
-        return document.getElementById(targetDiv).clientHeight;    
-      }
+      const getMaxHeight = (targetDiv) => {return document.getElementById(targetDiv).clientHeight;}
+      const getMaxWidth = (targetDiv) => {return document.getElementById(targetDiv).clientWidth;}
 
-      const getMaxWidth = (targetDiv) => {
-        return document.getElementById(targetDiv).clientWidth;    
-      }
+      const randomTop = (top) => {return Math.floor(Math.random() * (top + 1));}
+      const randomLeft = (left) => {return Math.floor(Math.random() * (left + 1));}
+
       // 1 //naked number
       // "this is a naked string"  //naked string
       // () => {};  //naked function
+      const jumpingPosition = (randomTop, randomLeft) => {
+        const jumpDiv = document.getElementById("jump");
+        jumpDiv.style.position = "fixed";
+        jumpDiv.style.top = randomTop;
+        jumpDiv.style.left = randomLeft;
+      };
 
       const changeJumpDivColour = (color) => {
         const jumpDiv = document.getElementById("jump");
         jumpDiv.innerHTML = "No I am not";
-        jumpDiv.style.color = color;
-        jumpDiv.style.position = "fixed";
-        jumpDiv.style.top = "100px";
-        jumpDiv.style.left = "100px";
+        jumpDiv.style.color = color;        
       };
+
       logColour("The following should be the height and width of a div : ");
       logColour(getMaxHeight("jump"), getMaxWidth("jump"));
+      jumpingPosition(randomTop(getMaxHeight("jump")), randomLeft(getMaxWidth("jump")));      
       changeJumpDivColour(setRandomColor());
     </script>
   </body>
