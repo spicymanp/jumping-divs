@@ -1,4 +1,4 @@
-function getRandomColor() {
+function setRandomColor() {
 
     let numbers = '0123456789ABCDEF';
     let color = '#';
@@ -10,5 +10,22 @@ function getRandomColor() {
 
   }
 
-  console.log(getRandomColor());
-  
+  const getMaxHeight = (targetDiv) => {
+    return document.getElementById(targetDiv).clientHeight;    
+  }
+
+  const getMaxWidth = (targetDiv) => {
+    return document.getElementById(targetDiv).clientWidth;    
+  }
+
+  function randomPosition(top, left) {
+
+  }
+
+  console.log(setRandomColor());
+  console.log(setRandomColor());
+  console.log(setRandomColor());
+  console.log(setRandomColor());
+  console.log(setRandomColor());
+  console.log(setRandomColor());
+  console.log(setRandomColor());

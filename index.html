@@ -21,7 +21,7 @@
     <div id="for-real">For reals!!</div>
     <script>
 
-      function getRandomColor() {
+      function setRandomColor() {
 
       let numbers = '0123456789ABCDEF';
       let color = '#';
@@ -38,12 +38,17 @@
       };
 
       const doThis = () => {
-        changeJumpDivColour(getRandomColor());
-        setTimeout(doThis, 5000);
+        changeJumpDivColour(setRandomColor());
+        setTimeout(doThis, 3000);
       };
 
-      setTimeout(doThis, 5000);
+      const getMaxHeight = (targetDiv) => {
+        return document.getElementById(targetDiv).clientHeight;    
+      }
 
+      const getMaxWidth = (targetDiv) => {
+        return document.getElementById(targetDiv).clientWidth;    
+      }
       // 1 //naked number
       // "this is a naked string"  //naked string
       // () => {};  //naked function
@@ -56,8 +61,9 @@
         jumpDiv.style.top = "100px";
         jumpDiv.style.left = "100px";
       };
-      logColour(getRandomColor());
-      changeJumpDivColour(getRandomColor());
+      logColour("The following should be the height and width of a div : ");
+      logColour(getMaxHeight("jump"), getMaxWidth("jump"));
+      changeJumpDivColour(setRandomColor());
     </script>
   </body>
 </html>
