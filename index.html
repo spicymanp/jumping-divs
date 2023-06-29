@@ -10,35 +10,25 @@
     />
     <title>Jumping Divs</title>
     <meta name="description" content="It's going to jump!" />
-    <style>
+    <!-- <style>
       #for-real {
         color: rgb(22, 22, 83);
       }
-    </style>
+    </style> -->
   </head>
   <body>
     <div id="jump">I am going to jump!</div>
     <div id="for-real">For reals!!</div>
     <script>
 
-      function getRandomColor() {
-
-        var numbers = '0123456789ABCDEF';
-        var color = "#";
-
-        for (let i = 0; i < 6; i++) {
-          color += numbers[Math.floor(Math.random()) * 16];
-        }
-        return color;
-
-      }
+      
 
       const logColour = (message) => {
         console.log(message);
       };
 
       const doThis = () => {
-        changeJumpDivColour(getRandomColor);
+        changeJumpDivColour(getRandomColor());
         setTimeout(doThis, 5000);
       };
 
@@ -56,8 +46,8 @@
         jumpDiv.style.top = "100px";
         jumpDiv.style.left = "100px";
       };
-      logColour("Hey Rowan!!!");
-      changeJumpDivColour(getRandomColor);
+      logColour(getRandomColor());
+      changeJumpDivColour(getRandomColor());
     </script>
   </body>
 </html>
