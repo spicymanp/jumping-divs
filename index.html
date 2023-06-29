@@ -33,8 +33,8 @@
 
       };      
 
-      const logColour = (message) => {
-        console.log(message);
+      const logColour = (message1, message2) => {
+        console.log(message1, message2);
       };
 
       const doThis = () => {
@@ -54,7 +54,7 @@
       // 1 //naked number
       // "this is a naked string"  //naked string
       // () => {};  //naked function
-      
+
       const jumpingPosition = (randomTop, randomLeft) => {
         const jumpDiv = document.getElementById("jump");
         jumpDiv.style.position = "fixed";
@@ -68,8 +68,9 @@
         jumpDiv.style.color = color;        
       };
 
+      logColour("Hey Rowan! The divs kinda move randomly and the colors are also random! :D");
       logColour("The following should be the height and width of a div : ");
-      logColour("Height : ", getMaxHeight("jump"), "Width : ", getMaxWidth("jump"));            
+      logColour("Height : " + getMaxHeight("jump"), "Width : ", getMaxWidth("jump"));            
       changeJumpDivColour(setRandomColor());
       setTimeout(doThis, 3000);
     </script>
