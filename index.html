@@ -39,6 +39,7 @@
 
       const doThis = () => {
         changeJumpDivColour(setRandomColor());
+        jumpingPosition(randomTop(getMaxHeight("for-real")), randomLeft(getMaxWidth("for-real")));
         setTimeout(doThis, 3000);
       };
 
@@ -65,8 +66,7 @@
       };
 
       logColour("The following should be the height and width of a div : ");
-      logColour(getMaxHeight("jump"), getMaxWidth("jump"));
-      jumpingPosition(randomTop(getMaxHeight("for-real")), randomLeft(getMaxWidth("for-real")));      
+      logColour("Height : ", getMaxHeight("jump"), "Width : ", getMaxWidth("jump"));            
       changeJumpDivColour(setRandomColor());
     </script>
   </body>
