@@ -3,40 +3,49 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    
+
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/@exampledev/new.css@1.1.2/new.min.css"
     />
     <title>Jumping Divs</title>
-    <meta
-      name="description"
-      content="It's going to jump!"
-    />
+    <meta name="description" content="It's going to jump!" />
     <style>
       #for-real {
         color: rgb(22, 22, 83);
       }
     </style>
   </head>
-  <body>    
+  <body>
     <div id="jump">I am going to jump!</div>
     <div id="for-real">For reals!!</div>
     <script>
-      
+
+      function getRandomColor() {
+
+        var numbers = '0123456789ABCDEF';
+        var color = "#";
+
+        for (let i = 0; i < 6; i++) {
+          color += numbers[Math.floor(Math.random()) * 16];
+        }
+        return color;
+
+      }
+
       const logColour = (message) => {
         console.log(message);
       };
-      
+
       const doThis = () => {
-        changeJumpDivColour("blue");
+        changeJumpDivColour(getRandomColor);
         setTimeout(doThis, 5000);
-      };  
-      
+      };
+
       setTimeout(doThis, 5000);
 
       // 1 //naked number
-      // "this is a naked string"  //naked string      
+      // "this is a naked string"  //naked string
       // () => {};  //naked function
 
       const changeJumpDivColour = (color) => {
@@ -46,9 +55,9 @@
         jumpDiv.style.position = "fixed";
         jumpDiv.style.top = "100px";
         jumpDiv.style.left = "100px";
-      };      
+      };
       logColour("Hey Rowan!!!");
-      changeJumpDivColour("pink");
+      changeJumpDivColour(getRandomColor);
     </script>
   </body>
 </html>
